@@ -1,0 +1,31 @@
+<h1>papergirls&amp;rails.</h1>
+<br />
+
+<table>
+  <tr>
+     <th>Date</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Picture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ideas.each do |idea| %>
+  <tr>
+   <td><%= idea.created_at.strftime('%y/%m/%d') %></td>
+    <td><%= link_to idea.name, idea %></td>
+   <td><%= idea.description %></td> 
+    <td><%= link_to image_tag(idea.picture_url, :width => 100), idea %></td>
+
+    <td><%= link_to 'Show', idea %></td>
+    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+    <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div class="btn"> <%= link_to 'Add Title', new_idea_path %> </div>
