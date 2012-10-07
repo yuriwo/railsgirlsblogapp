@@ -17,6 +17,16 @@
             <ul class="nav">
                 <li class="active"><a href="/ideas">rails学習日記</a></li>
             </ul>
+            <ul>
+            <%= link_to "login",signin_path %>
+            </ul>
+            <ul>
+              <% if signed_in? %>
+              <%= current_user.email %> でログインしています
+              <%= link_to "Sign out",signout_path,method:"delete" %>
+            <% end %>
+            </ul>
+          
         </div>
     </div>
 </div>
