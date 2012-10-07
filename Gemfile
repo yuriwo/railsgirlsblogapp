@@ -8,10 +8,18 @@ gem 'rails', '3.2.3'
 gem "sqlite3",group: :development
 gem "pg",group: :production
 
+# need?start
+group :production do
+    gem 'pg'
+    gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+end
+# need?end
+
 gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
