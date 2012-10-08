@@ -20,7 +20,9 @@
     <td><%= link_to image_tag(idea.picture_url, :width => 100), idea %></td>
 
     <td><%= link_to 'Show', idea %></td>
+    <% if signed_in? %>
     <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+    <% end %>
     <% if signed_in? %>
     <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
     <% end %>
